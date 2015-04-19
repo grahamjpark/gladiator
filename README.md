@@ -10,4 +10,4 @@
 
 ##Funny names
 - I'll make a manpage out of you
-- Tailor Swift
+- Tailor Swift //Thread and fork on threads ... 1 CPU means context swtiching will inhibit us more then help
