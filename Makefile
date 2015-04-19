@@ -1,4 +1,5 @@
-all:run
+all:  run
 
-	run:
+run: 
+	gcc aTildeTheHun.c -o aTildeTheHun
 
