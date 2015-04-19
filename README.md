@@ -8,7 +8,7 @@
 - Flash lite 	
 	mypid = getpid();
 	Start pkilling all above and below
-
+- MMAP to keep track of which PIDs are ours
 
 
 
