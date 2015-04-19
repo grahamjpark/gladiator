@@ -10,3 +10,4 @@
 
 ##Funny names
 - I'll make a manpage out of you
+- Tailor Swift
