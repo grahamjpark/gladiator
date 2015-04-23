@@ -13,12 +13,17 @@
 ##Things we've learned
 
 	#include <sys/resource.h>
-    setpriority(PRIO_PROCESS, 0, -20); use it because it gave us one extra process
-
+    setpriority(PRIO_PROCESS, 0, -20); use it because it gave us EXTREME cpu time
+	
+	Flash uses setpriority in order to win, but its kill strat is better than kill(-1,SIGKILL)
+   
     You cannot do getpid() then kill +/-
 
-    proc has all the info but, requires writing to file
 
+
+    proc has a lot of process info but requires reading the proc directory (SLOW)
+    
+    
 ##Funny names
 - I'll make a manpage out of you
 - Tailor Swift //Thread and fork on threads ... 1 CPU means context swtiching will inhibit us more then help
