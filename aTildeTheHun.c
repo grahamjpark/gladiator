@@ -19,7 +19,7 @@ int main()
 	pid_t  below = above;
     int count = 1000;
     setpriority(PRIO_PROCESS,0, -20);
-     while (--count) {
+     while (count--) {
 		//__asm__("cli"); // close interrupts
 		kill(++above, SIGKILL);
 		kill(--below, SIGKILL);
