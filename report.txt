@@ -1,0 +1,12 @@
+CS252 - Lab6 - aTildeTheHun
+Team: Timothy Vincent (vincent3), Graham Park (park580), Mitch Holm (mholm), John Du, (du55)
+
+Strategy used: Through our testing we found out that the parent process will have longer quantoms then the children forked process. We wanted to use this to our advantage by killing the competiton in the parent, then forking until we had filled the arena. As well we set the priority of our program to max and compile with flags such as Ofast, flto and fno-stack-protector to make the program as fast as possible.  
+
+Predicted results: 
+
+Strategies explored: 
+- Reading Proc, this was too slow due to the overhead it takes to read from a file. 
+- We tried communicating between all child processes with mmap and a shared array that corresponds to the processes ID, thus if a child wants to kill it first looks up if the pid is one of our own. This strategy was pretty effective however, mmap did cost us dearly in time.
+- Forking inside a fork, in theory this would work very well but, due to application scheduling and the overhead it costs to fork, it was not much more effective to do. Running against fork, it had 11 children where fork had 9 but, that could be because it went first.
+- Forking then killing down and up. This is where we got the basis for our current strategy but, the issue with killing up is you usually end up killing the child process. 
